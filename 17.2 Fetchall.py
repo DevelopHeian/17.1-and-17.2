@@ -1,31 +1,3 @@
-
-
-
-
-
-
-
-
-#17.1
-#(Books Database) In an IPython session, perform each of the following tasks on the
-#books database from Section 17.2:
-#a) Select all authors’ last names from the authors table in descending order.
-#b) Select all book titles from the titles table in ascending order.
-#c) Use an INNER JOIN to select all the books for a specific author. Include the title,
-#copyright year and ISBN. Order the information alphabetically by title.
-#d) Insert a new author into the authors table.
-#e) Insert a new title for an author. Remember that the book must have an entry
-#in the author_ISBN table and an entry in the titles table.
-
-
-
-
-
-
-
-
-
-
 #17.2
 #Cursor Method fetchall and Attribute description - When you use a sqlite3
 #Cursor’s execute method to perform a query, the query’s results are stored in the Cursor
@@ -48,7 +20,7 @@ cursor.execute("SELECT * FROM titles")
 description = cursor.description
 data = cursor.fetchall()
 
-tabularFormatData = ''
+tabularFormatData = f'{description[0][0]}   {description[1][0]}  {description[2][0]}  {description[3][0]}\n'  
 for value in data:
     tabularFormatData += f'{value}\n'
 print(tabularFormatData)
